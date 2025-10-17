@@ -1,0 +1,391 @@
+/* ----- FUENTES ELEGANTES DE GOOGLE FONTS ----- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap');
+
+/* ----- VARIABLES CSS PARA UN DISEÑO CONSISTENTE Y ELEGANTE ----- */
+/* Usar variables facilita cambiar la paleta de colores de todo el sitio. */
+:root {
+    --font-titulos: 'Playfair Display', serif;
+    --font-cuerpo: 'Montserrat', sans-serif;
+    --color-primario: #8D6B94; /* Un tono lavanda suave */
+    --color-secundario: #F5E8C7; /* Un fondo crema cálido */
+    --color-acento: #DEBACE; /* Un rosa pálido para detalles */
+    --color-texto: #333333;
+    --sombra-suave: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* ----- ESTILOS GENERALES Y RESETEO ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    /* Efecto de desplazamiento suave al hacer clic en los enlaces del menú. */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-cuerpo);
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-titulos);
+    color: var(--color-primario);
+}
+
+section {
+    padding: 60px 5%;
+}
+
+/* ----- HEADER Y BARRA DE NAVEGACIÓN ----- */
+header {
+    background-color: #fff;
+    box-shadow: var(--sombra-suave);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    /* Uso de Flexbox para alinear el logo y los enlaces fácilmente. */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+    /* Transición suave para el efecto hover. */
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primario);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-primario);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Oculto en escritorio */
+    cursor: pointer;
+}
+
+.hamburger-icon {
+    width: 30px;
+}
+
+
+/* ----- SECCIÓN CARRUSEL ----- */
+.carrusel {
+    position: relative;
+    max-height: 80vh;
+    overflow: hidden;
+    padding: 0;
+}
+
+.slides {
+    display: flex;
+    /* Asumiendo que JS manejará la transición. Aquí una base con fade. */
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+    display: none;
+}
+
+.slides img.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+/* ----- SECCIONES DE CONTENIDO ----- */
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* --- Empresa --- */
+.empresa {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.empresa .valores {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.empresa ul li {
+    margin-bottom: 10px;
+}
+
+/* --- Productos --- */
+.productos {
+    background-color: #fff;
+}
+
+.tarjetas {
+    /* Uso de CSS Grid para un diseño de tarjetas responsivo y robusto. */
+    display: grid;
+    /* Crea columnas de mínimo 300px que se ajustan automáticamente. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tarjeta {
+    background-color: var(--color-secundario);
+    border-radius: 10px;
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.tarjeta h3 {
+    margin: 20px 0 10px;
+}
+
+.tarjeta p {
+    padding: 0 20px 20px;
+}
+
+
+/* --- Contacto --- */
+.contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.contacto input,
+.contacto textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-acento);
+    border-radius: 5px;
+    font-family: var(--font-cuerpo);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contacto input:focus,
+.contacto textarea:focus {
+    outline: none;
+    border-color: var(--color-primario);
+    box-shadow: 0 0 5px var(--color-acento);
+}
+
+.contacto button {
+    padding: 15px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.contacto button:hover {
+    background-color: darken(var(--color-primario), 10%);
+}
+
+
+/* --- Servicio a Domicilio --- */
+.adomicilio {
+    background-color: #fff;
+}
+
+.contenedor-adomicilio {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.texto-adomicilio,
+.mapa-adomicilio {
+    /* flex: 1; asegura que ambos elementos compartan el espacio por igual. */
+    flex: 1;
+}
+
+.mapa-adomicilio iframe {
+    border-radius: 10px;
+}
+
+
+/* ----- FOOTER ----- */
+.footer {
+    background-color: var(--color-primario);
+    color: white;
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+    gap: 20px;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-acento);
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--color-acento);
+}
+
+.social-media a {
+    margin-right: 15px;
+}
+
+.social-media img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media a:hover img {
+    transform: scale(1.2);
+}
+
+
+/* ----- DISEÑO RESPONSIVE (MEDIA QUERIES) ----- */
+
+/* --- Tableta --- */
+@media (max-width: 768px) {
+    .nav-links {
+        /* Lógica para menú hamburguesa (requiere JS para alternar 'active') */
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        flex-direction: column;
+        text-align: center;
+        box-shadow: var(--sombra-suave);
+    }
+    
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Muestra el ícono de hamburguesa */
+    }
+
+    .contenedor-adomicilio {
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* --- Móvil --- */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florería Anheli Bruma</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+    <!-- ---------- HEADER ---------- -->
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Florería Anheli Bruma</h1>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#empresa">Empresa</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+
+            <!-- Botón para menú móvil -->
+            <div class="menu-toggle">
+                <img src="img/barra-de-menus.png" alt="Menú" class="hamburger-icon">
+            </div>
+        </nav>
+    </header>
+
+    <!-- ---------- MAIN ---------- -->
+    <main>
+
+        <!-- Carrusel de imágenes -->
+        <section id="inicio" class="carrusel">
+            <div class="slides">
+                <img src="img/Arreglo Tropical.jpg" alt="Arreglo Tropical" class="active">
+                <img src="img/Caja de Floral Deluxe.jpg" alt="Caja Floral Deluxe">
+                <img src="img/Centr De MEsas.jpg" alt="Centro de Mesas">
+            </div>
+        </section>
+
+        <!-- Sobre la empresa -->
+        <section id="empresa" class="empresa">
+            <h2>Sobre Nosotros</h2>
+            <p><strong>Visión:</strong> Brindar alegría y emoción a cada ocasión a través de arreglos florales frescos, creativos y personalizados.</p>
+            <p><strong>Misión:</strong> Ser la florería más reconocida por su innovación, calidad y servicio en la creación de experiencias florales únicas.</p>
+            <div class="valores">
+                <h3>Valores</h3>
+                <ul>
+                    <li>Creatividad: Diseñamos con pasión y originalidad en cada arreglo.</li>
+                    <li>Calidad: Utilizamos flores frescas y seleccionadas cuidadosamente.</li>
+                    <li>Compromiso: Nos esforzamos por superar las expectativas de nuestros clientes.</li>
+                    <li>Amor por la naturaleza: Promovemos el respeto y cuidado del medio ambiente.</li>
+                    <li>Calidez humana: Atendemos con empatía, amabilidad y dedicación.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Productos -->
+        <section id="productos" class="productos">
+            <h2>Nuestros Productos</h2>
+            <div class="tarjetas">
+                <div class="tarjeta">
+                    <h3>Ramo Aurora Rosada</h3>
+                    <p>Rosas rosadas y lirios blancos, ideal para expresar ternura y admiración.</p>
+                    <img src="img/Ramo .jpg" alt="Ramo Aurora Rosada">
+                </div>
+                <div class="tarjeta">
+                    <h3>Ramo Brisa del Alba</h3>
+                    <p>Margaritas, gerberas y eucalipto, que transmiten frescura y alegría.</p>
+                    <img src="img/Ramo .jpg" alt="Ramo Brisa del Alba">
+                </div>
+                <div class="tarjeta">
+                    <h3>Ramo Encanto Nocturno</h3>
+                    <p>Orquídeas moradas y rosas azules, simbolizando misterio y elegancia.</p>
+                    <img src="img/Ramo .jpg" alt="Ramo Encanto Nocturno">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto" class="contacto">
+            <h2>Contáctanos</h2>
+            <form>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Servicio a domicilio -->
+        <section id="adomicilio" class="adomicilio">
+            <h2>Servicio a domicilio</h2>
+            <div class="contenedor-adomicilio">
+                <div class="texto-adomicilio">
+                    <h3>¿Cómo funciona?</h3>
+                    <p>
+                        Nuestro servicio a domicilio te permite recibir atención personalizada sin salir de casa.
+                        Solo selecciona el producto que te interesa, y nosotros te lo entregamos en la puerta de tu hogar.
+                    </p>
+                </div>
+                <div class="mapa-adomicilio">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.874238157781!2d-89.218191!3d13.692940!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQxJzM0LjYiTiA4OcKwMTMnMDUuNSJX!5e0!3m2!1ses!2ssv!4v1690000000000" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ---------- FOOTER ---------- -->
+    <footer class="footer">
+        <div class="footer-col">
+            <h4>Información de Contacto</h4>
+            <ul>
+                <li><a href="#">Contacto: 0000-0000</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Redes Sociales</h4>
+            <div class="social-media">
+                <a href="#"><img src="img/logotipo-de-instagram (1).png" alt="Instagram"></a>
+                <a href="#"><img src="img/tik-tok.png" alt="TikTok"></a>
+                <a href="#"><img src="img/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="img/logotipos.png" alt="Twitter"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/Java.js"></script>
+</body>
+</html>
